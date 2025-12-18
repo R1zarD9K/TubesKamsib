@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Student Management</span>
+        <div>
+            <span class="text-white mr-3">Welcome, User</span>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-light">Logout</a>
+        </div>
+    </nav>
+
     <div class="container mt-5">
         <h1>Add New Student</h1>
         <form action="/add" method="POST">

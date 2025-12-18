@@ -63,7 +63,7 @@ def add_student():
         name = request.form['name']
         age = request.form['age']
         grade = request.form['grade']
-        
+
 
         connection = sqlite3.connect('instance/students.db')
         cursor = connection.cursor()
@@ -78,7 +78,8 @@ def add_student():
         cursor.execute(query)
         connection.commit()
         connection.close()
-        return render_template('add.html')
+        return redirect(url_for('index'))
+    return render_template('add.html')
 
 
 @app.route('/delete/<string:id>') 
