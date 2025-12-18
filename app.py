@@ -74,7 +74,7 @@ def add_student():
         #     {'name': name, 'age': age, 'grade': grade}
         # )
         # db.session.commit()
-        query = f"INSERT INTO student (name, age, grade) VALUES ('{name}', {age}, '{grade}')"
+        query = f"INSERT INTO student (name, age, grade) VALUES ('{name}', '{age}', '{grade}')"
         cursor.execute(query)
         connection.commit()
         connection.close()
