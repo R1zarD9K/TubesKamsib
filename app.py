@@ -48,9 +48,9 @@ def login():
 def logout():
     session.pop('user_id', None)
     return redirect(url_for('login'))
-@login_required
 
 @app.route('/')
+@login_required
 def index():
     # RAW Query
     students = db.session.execute(text('SELECT * FROM student')).fetchall()
@@ -58,7 +58,6 @@ def index():
 
 @app.route('/add', methods=['GET', 'POST'])
 @login_required
-
 def add_student():
     if request.method == 'POST':
         name = request.form['name']
